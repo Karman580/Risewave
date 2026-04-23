@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-deep: #020617;
+    --surface: rgba(15, 23, 42, 0.6);
+    --accent: #00E5FF;
+    --accent-glow: rgba(0, 229, 255, 0.4);
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --border-glass: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(0, 229, 255, 0.3);
+    color: #F8FAFC;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.5);
+  }
+}
+
+/* Glow orb background effects */
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+}
+
+.glow-orb-1 {
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.glow-orb-2 {
+  bottom: 10%;
+  left: -300px;
+  width: 800px;
+  height: 800px;
+  animation: float 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(40px) scale(1.1);
+  }
+}
