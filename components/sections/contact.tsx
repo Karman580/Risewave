@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, type FormEvent } from "react";
-import { Phone, MapPin } from "lucide-react";
+import { Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { Input, Select, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -88,17 +88,7 @@ export function Contact() {
                     {BRAND.phone}
                   </a>
                 </div>
-                <div className="flex gap-4 text-lg">
-                  <MapPin
-                    className="w-5 h-5 text-neon mt-1 flex-shrink-0"
-                    aria-hidden="true"
-                  />
-                  <address className="not-italic">
-                    {BRAND.addressLine1}
-                    <br />
-                    {BRAND.addressLine2}
-                  </address>
-                </div>
+
               </div>
             </div>
 
